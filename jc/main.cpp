@@ -7,12 +7,22 @@
 //
 
 #include <iostream>
-
-int main(int argc, const char * argv[])
+using namespace std;
+int jcn(int n)
 {
-
-    // insert code here...
-    std::cout << "Hello, World!\n";
-    return 0;
+    if(n==1) return 1;
+    else return n*jcn(n-1);
+}
+int main()
+{
+    int m,n,p,q,cmn;
+    q=1;
+    cin>>m>>n;
+    p=m-n;
+    for (; m>p; m--) {
+        q=q*m;
+    }
+    cmn=q/jcn(n);
+    cout<<cmn;
 }
 
